@@ -62,6 +62,12 @@ var Stopwatch = function () {
 			};
 		}
 	}, {
+		key: 'resetCount',
+		value: function resetCount() {
+			this.reset();
+			this.print();
+		}
+	}, {
 		key: 'print',
 		value: function print() {
 			this.display.innerText = this.format(this.times);
@@ -86,6 +92,11 @@ startButton.addEventListener('click', function () {
 var stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', function () {
 	return stopwatch.stop();
+});
+
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function () {
+	return stopwatch.resetCount();
 });
 
 function pad0(value) {
